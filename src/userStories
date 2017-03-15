@@ -1,0 +1,46 @@
+Thermostat
+Default 20c
+Up/down functions
+Min temp 10c
+Power saving mode = true/false
+  if true, Max temp 25c
+  else Max temp 35c
+  Default to true
+Reset temp to default
+Console log energy usage
+  < 18 = low
+  < 25 = medium
+  25+ = high
+Colour-coded energy usage interface
+
+As a user
+So that I have a starting temperature
+I want the thermostat to have a default temperature of 20c
+
+As a user
+So that I can raise the temperature
+I want an option to increase the temperature
+
+As a user
+So that I can lower the temperature
+I want an option to decrease the temperature
+
+As a user
+So that I'm not too cold
+I want the thermostat to have a minimum temperature of 10c
+
+As a user
+To save energy
+I want to have a power-saving mode
+
+As a user
+So that I can reset the temperature
+I want an option to set the temperature back to default
+
+As a power provider
+So that I can measure energy use
+I want to rate energy usage by low, medium and high
+
+As a user
+So I can see how much energy I'm using
+I want a colour-coded energy usage interface
