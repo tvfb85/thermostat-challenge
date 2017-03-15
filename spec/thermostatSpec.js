@@ -1,11 +1,13 @@
-describe("Base Temperature", function() {
+describe("Thermostat", function() {
 
   beforeEach(function() {
     thermo = new Thermostat();
   });
-  // describe("", function() {
+  describe("base temperature", function() {
     it("is set at 20 degrees", function() {
-      expect(thermo.baseTemp).toEqual(20);
+      expect(thermo.temperature).toEqual(20);
     });
-  // });
+  });
+
+  
 });
