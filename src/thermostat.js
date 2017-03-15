@@ -1,1 +1,3 @@
-function Thermostat
+function Thermostat() {
+
+};
