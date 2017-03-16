@@ -25,6 +25,12 @@ describe("Thermostat", function() {
       thermo.tempIncrease(12);
       expect(thermo.tempIncrease(1)).toEqual("Cannot go above 32 degrees")
     });
+    it("resets the temperature back to 20 degrees", function() {
+      thermo.tempIncrease(2);
+      thermo.reset();
+      expect(thermo.temperature).toEqual(20);
+    });
+
   });
 
   describe("power-saving mode", function() {
@@ -45,4 +51,24 @@ describe("Thermostat", function() {
       expect(thermo.tempIncrease(1)).toEqual("Cannot go above 25 degrees")
     });
   });
+
+  describe('energy usage', function() {
+
+    it('reports low energy usage when temp is less than 18 degrees', function() {
+      thermo.tempDecrease(3);
+      expect(thermo.setEnergyUsage()).toEqual('low-usage');
+    });
+
+    it('reports medium energy usage when temp is less than 25 degrees', function() {
+      thermo.tempIncrease(3);
+      expect(thermo.setEnergyUsage()).toEqual('medium-usage');
+    });
+
+    it('reports high energy usage when temp is over 24 degrees', function() {
+      thermo.tempIncrease(5);
+      expect(thermo.setEnergyUsage()).toEqual('high-usage');
+    });
+
+  });
+
 });
