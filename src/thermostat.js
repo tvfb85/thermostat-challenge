@@ -8,16 +8,16 @@ Thermostat.prototype.tempIncrease = function(amount) {
 };
 
 Thermostat.prototype.tempDecrease = function(amount) {
-  if (this.checkMin() === true)
-  console.log("Cannot go below 10 degrees");
+  if (this._checkMin(amount) === true)
+    return "Cannot go below 10 degrees";
   else {
     this.temperature -= amount
   };
 };
 
-Thermostat.prototype.checkMin = function() {
-  this.temperature <= 10
-  true;
+Thermostat.prototype._checkMin = function(amount) {
+  if (this.temperature - amount < 10)
+  return true;
 };
 
 Thermostat.prototype.powerSavingOff = function() {
@@ -27,3 +27,5 @@ Thermostat.prototype.powerSavingOff = function() {
 Thermostat.prototype.powerSavingOn = function() {
   this.powerSaving = true;
 };
+
+Thermostat.prototype
