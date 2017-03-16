@@ -4,7 +4,7 @@ Up/down functions
 Min temp 10c
 Power saving mode = true/false
   if true, Max temp 25c
-  else Max temp 35c
+  else Max temp 32c
   Default to true
 Reset temp to default
 Console log energy usage

@@ -20,6 +20,11 @@ describe("Thermostat", function() {
       thermo.tempDecrease(10);
       expect(thermo.tempDecrease(1)).toEqual("Cannot go below 10 degrees")
     });
+    it("doesn't go above 32 degrees", function() {
+      thermo.powerSavingOff();
+      thermo.tempIncrease(12);
+      expect(thermo.tempIncrease(1)).toEqual("Cannot go above 32 degrees")
+    });
   });
 
   describe("power-saving mode", function() {
@@ -35,8 +40,9 @@ describe("Thermostat", function() {
       expect(thermo.powerSaving).toEqual(true);
     });
     it("changes the max temperature while power-saving is on", function() {
+      thermo.powerSavingOn();
       thermo.tempIncrease(5);
-      expect(thermo.tempIncrease(1)).toEqual("Cannot go above 25 degrees when in power-saving mode")
+      expect(thermo.tempIncrease(1)).toEqual("Cannot go above 25 degrees")
     });
   });
 });
