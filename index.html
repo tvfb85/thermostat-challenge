@@ -4,19 +4,32 @@
 <head>
   <title>Thermostat</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-  <script src="src/thermostat.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="src/index.js"></script>
+
+  <script src="src/thermostat.js"></script>
   </head>
 
 <body>
+  <button id="down" class="ctrl">-</button>
 
   <div id="container">
     <div id="inner">
       <div id="notches"></div>
+        <div id="ticker"></div>
     </div>
   </div>
-  <div id="print"></div>
+  <button id="up" class="ctrl">+</button>
+  <div class="lower-container" style="top:0;width:100%">
+    <div class="controls" style="text-align:center;">
+      <h1 id="temperature" style="margin-top:-30px;"></h1>
+      <button id="reset">RESET</button>
+      <button id="psm" class="on">P S M</button>
+    </div>
+    <div id="energy-bar" style="margin: 20px auto;width:80%;"></div>
 
+  </div>
 </body>
 
 </html>
