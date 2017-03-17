@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $.get("http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=e90df68c7d8ee7197f673d9ce8215959", function(response) {
+    console.log(response.main.temp);
+    $('#weather-forecast').html(response.main.temp.toFixed(1))
+  });
   var thermostat = new Thermostat();
   updateTemperature();
 
